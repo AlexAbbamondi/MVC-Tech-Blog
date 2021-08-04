@@ -27,13 +27,9 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8],
+        len: [7],
       },
-    },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
+    }
   },
   {
     hooks: {

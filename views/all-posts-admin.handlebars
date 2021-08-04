@@ -1,6 +1,8 @@
+
 {{#each posts as |post|}}
-<div class="col-8 pt-5">
-    <a href="/post/{{post.id}}">
+
+<div class="col-8 mt-5">
+    <a href="/dashboard/edit/{{post.id}}">
         <div class="card">
             <div class="card-header custom-card-header">
             <h3>{{post.title}}</h3> <span>Posted by {{post.user.username}}</span>
@@ -11,4 +13,10 @@
         </div>
     </a>
 </div>
-{{/each}} 
+{{/each}}
+
+
+
+<div class="col-8 text-center mt-5">
+    <a href="dashboard/new"><button type="submit" class="btn new-post-button">New Post</button></a>
+</div>

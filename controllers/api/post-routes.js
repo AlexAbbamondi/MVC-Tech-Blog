@@ -72,14 +72,15 @@ router.get("/:id", async (req, res) => {
 
 
 //POST post
-router.post("/", auth, async (req, res) => {
+router.post("/", async (req, res) => {
+  console.log("POSTING NOW")
   try {
     const postData = await Post.create({
       title: req.body.title,
-      body: req.body.post_text,
+      body: req.body.body,
       user_id: req.session.user_id,
     });
-    res.status(201).json(postData);
+    res.status(200).json(postData);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
