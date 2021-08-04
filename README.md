@@ -28,7 +28,7 @@
 ![image](https://user-images.githubusercontent.com/39712161/128260948-435610c6-8c13-4e4f-8abb-9c0aea1993c8.png)
 
 <h3>Usage Instructions</h3>
--To use this application you must open the terminal and run the schema.sql then run 'npm run seed' then either run 'npm start' or 'node server.js' 
+-To use this application you must open the terminal and run the ' source schema.sql' within the db folder then run 'npm run seed' from the project folder then either run 'npm start' or 'node server.js' 
 
 <h3>Heroku Link</h3>
 -https://fathomless-waters-10773.herokuapp.com/
