@@ -1,9 +1,12 @@
+//required modules
 const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection.js");
 
+//class to extend
 class Post extends Model {}
 
+//table fields to create
 Post.init(
   {
     title: {

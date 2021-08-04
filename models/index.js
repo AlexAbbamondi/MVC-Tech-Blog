@@ -1,7 +1,9 @@
+//required modules
 const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 
+//associations
 Post.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'

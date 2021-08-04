@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { User } = require("../../models");
 const auth = require("../../utils/auth");
 
-//GET User
+//GET User data minus the password
 router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll({
@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-//POST User
+//POST User data and save to the db
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create({
@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-//Login
+//Login to the website with a username and password
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({
@@ -43,18 +43,22 @@ router.post("/login", async (req, res) => {
       },
     });
 
+    //if no username was found then display this message
     if (!userData) {
       res.status(400).json({ message: "No user with that email address!" }); 
       return;
     }
 
+    //check the password that was sent in
     const password = userData.checkPassword(req.body.password);
 
+    //if not the right password then display this message
     if (!password) {
       res.status(400).json({ message: "Incorrect password!" });
       return;
     }
 
+    //save this login data for the session
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.username = userData.username;

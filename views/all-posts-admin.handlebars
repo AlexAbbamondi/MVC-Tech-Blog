@@ -1,6 +1,5 @@
-
+{{!-- show all the posts that the user has created --}}
 {{#each posts as |post|}}
-
 <div class="col-8 mt-5">
     <a href="/dashboard/edit/{{post.id}}">
         <div class="card">
@@ -15,8 +14,7 @@
 </div>
 {{/each}}
 
-
-
+{{!-- button to create a new post --}}
 <div class="col-8 text-center mt-5">
     <a href="dashboard/new"><button type="submit" class="btn new-post-button">New Post</button></a>
 </div>

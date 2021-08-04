@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { User, Post, Comment } = require("../../models");
 const auth = require("../../utils/auth");
 
-//GET Posts
+//GET Posts using set attributes and saving to db
 router.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -35,7 +35,7 @@ router.get("/", async (req, res) => {
 });
 
 
-//GET posts by id
+//GET posts by id using set attributes and saving to db
 router.get("/:id", async (req, res) => {
   try {
     const postData = await Post.findOne({
@@ -59,6 +59,7 @@ router.get("/:id", async (req, res) => {
       ],
     });
 
+    //if no post data then display this message
     if (!postData) {
       res.status(404).json({ message: "No post found with this id" });
       return;
@@ -71,7 +72,7 @@ router.get("/:id", async (req, res) => {
 });
 
 
-//POST post
+//POST post with title, body and specific user
 router.post("/", async (req, res) => {
   console.log("POSTING NOW")
   try {
@@ -87,7 +88,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-//UPDATE post
+//UPDATE post at a specific id
 router.put("/:id", auth, async (req, res) => {
   try {
     const postData = await Post.update(req.body, {
@@ -95,6 +96,7 @@ router.put("/:id", auth, async (req, res) => {
         id: req.params.id,
       },
     });
+    //if no post is at that id then display this message
     if (!postData) {
       res.status(404).json({ message: "No post found with this id" });
       return;
@@ -106,7 +108,7 @@ router.put("/:id", auth, async (req, res) => {
   }
 });
 
-//DELETE post
+//DELETE post with a specific id
 router.delete("/:id", auth, async (req, res) => {
   try {
     const postData = await Post.destroy({
@@ -114,6 +116,7 @@ router.delete("/:id", auth, async (req, res) => {
         id: req.params.id,
       },
     });
+    //if no post found then display this message
     if (!postData) {
       res.status(404).json({ message: "No post found with this id" });
       return;

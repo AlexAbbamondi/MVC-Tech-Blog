@@ -1,9 +1,12 @@
+//Signup
 async function signupFormHandler(event) {
     event.preventDefault();
 
+    //get input values
     const username = document.querySelector('#usernameSignup').value.trim();
     const password = document.querySelector('#passwordSignup').value.trim();
 
+    //if you get both values then send it to the route
     if (username && password) {
         const res = await fetch('/api/users', {
             method: 'POST',
@@ -14,6 +17,7 @@ async function signupFormHandler(event) {
             headers: {'Content-Type': 'application/json'}
         });
 
+        //if everything goes ok then send them to the dashboard
         if (res.ok) {
             alert('Account created!');
             document.location.replace('/dashboard');
@@ -23,4 +27,5 @@ async function signupFormHandler(event) {
     }
 }
 
+//eventlistener
 document.querySelector('.signupForm').addEventListener('submit', signupFormHandler);

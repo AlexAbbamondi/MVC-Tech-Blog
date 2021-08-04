@@ -1,9 +1,12 @@
+//create a new post
 async function newFormHandler(event) {
     event.preventDefault();
 
+    //get values from input
     const title = document.querySelector('#postTitle').value.trim();
     const body = document.querySelector('#postContent').value.trim();
 
+    //send info to the route
     const res = await fetch(`/api/posts`, {
         method: 'POST',
         body: JSON.stringify({
@@ -15,6 +18,7 @@ async function newFormHandler(event) {
         }
     });
 
+    //if everything is ok then return to homepage
     if (res.ok) {
         document.location.replace('/');
     } else {
@@ -22,4 +26,5 @@ async function newFormHandler(event) {
     }
 }
 
+//eventlistner
 document.querySelector('.newPostForm').addEventListener('submit', newFormHandler);

@@ -1,3 +1,4 @@
+//comments to post in db
 const { Comment } = require('../models');
 
 const commentData = [

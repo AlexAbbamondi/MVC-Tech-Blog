@@ -1,9 +1,11 @@
+//required modules
 const posts = require('./post-seeds');
 const users = require('./user-seeds');
 const comments = require('./comment-seeds');
 
 const sequelize = require('../config/connection');
 
+//run all the seed files
 const all = async () => {
   await sequelize.sync({ force: true });
     console.log('\n----- DATABASE SYNCED -----\n');

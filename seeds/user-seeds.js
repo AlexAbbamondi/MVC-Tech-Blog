@@ -1,3 +1,4 @@
+//users to post in db
 const { User } = require('../models');
 
 const userData = [

@@ -2,7 +2,7 @@ const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Post, User, Comment } = require("../models");
 
-// Render the home page
+// Render the home page with all the posts
 router.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -31,6 +31,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+//GET a particular post baased on id
 router.get("/post/:id", async (req, res) => {
   try {
     const postData = await Post.findOne({
@@ -54,6 +55,7 @@ router.get("/post/:id", async (req, res) => {
       ],
     });
 
+    //if no post exists with that id then display this message
     if (!postData) {
       res.status(404).json({ message: "No post found with this id" });
       return;
@@ -67,6 +69,7 @@ router.get("/post/:id", async (req, res) => {
   }
 });
 
+//If logged in then display the homepage else display the login page
 router.get('/login', (req, res) => {
     try {
         if (req.session.loggedIn) {
@@ -81,7 +84,7 @@ router.get('/login', (req, res) => {
     }
   });
 
-
+//if you are logged in you get redirected to the homepage else you have to signup
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');

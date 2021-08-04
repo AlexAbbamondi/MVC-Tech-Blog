@@ -1,9 +1,11 @@
+/* body */
 body {
     background-color: #deeaee;
     min-height: 400px;
     margin-bottom: 100px;
 }
 
+/* header and nav */
 header {
     background-color: #c94c4c !important;
 }
@@ -22,11 +24,13 @@ header {
     color: #deeaee;
 }
 
+/* links */
 a {
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
 }
 
+/* cards */
 .card {
     border-radius: 20px 0 20px 0;
 }
@@ -46,6 +50,7 @@ a {
     font-family: 'Open Sans', sans-serif;
 }
 
+/* text */
 h2, h3, span {
     color: #ffffff;
 }
@@ -63,6 +68,7 @@ p {
     background-color: #b1cbbb;
 }
 
+/* button styling */
 .btn {
     background-color: #c94c4c;
     color: #ffffff;
@@ -82,6 +88,7 @@ p {
     font-size: 1.5rem;
 }
 
+/* footer */
 footer {
     background-color: #c94c4c;
     width: 100%;

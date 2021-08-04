@@ -1,3 +1,4 @@
+//posts to post in db
 const { Post } = require('../models');
 
 const postData = [

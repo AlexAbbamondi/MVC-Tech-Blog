@@ -1,13 +1,16 @@
+//required modules
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection.js");
 const bcrypt = require('bcrypt');
 
+//class to extend with a function to serialize the password
 class User extends Model {
     checkPassword(loginPassword) {
         return bcrypt.compareSync(loginPassword, this.password);
     }
 }
 
+//table fields to create
 User.init(
   {
     id: {
