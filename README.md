@@ -20,7 +20,7 @@
 -mysql2
 
 <h3>Screenshots</h3>
-![demo](https://user-images.githubusercontent.com/39712161/128260760-516d1337-53a7-4cb4-806a-d82b89d6ac56.png)<br>
+![image](https://user-images.githubusercontent.com/39712161/128260760-516d1337-53a7-4cb4-806a-d82b89d6ac56.png)<br>
 ![image](https://user-images.githubusercontent.com/39712161/128260804-c6a2ed4d-d6ed-4015-87cb-307f8dbf5dac.png)<br>
 ![image](https://user-images.githubusercontent.com/39712161/128260843-5937be29-e4aa-4a3b-ba25-9a187097e04c.png)<br>
 ![image](https://user-images.githubusercontent.com/39712161/128260871-9a5c4d95-0621-4ab3-90c6-51dd405297f8.png)<br>
